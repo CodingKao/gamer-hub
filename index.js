@@ -1,21 +1,22 @@
-const { createServer } = require('./server');
-const { createClient } = require('./client');
+'use strict';
 
-// Create a server instance
-const server = createServer();
+const express = require('express');
+const app = express();
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require('socket.io');
+const io = new Server(server);
 
-// Create client instances
-const client1 = createClient('Player1');
-const client2 = createClient('Player2');
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
 
-// Connect clients to the server
-client1.connect(server);
-client2.connect(server);
+io.on('connection', (socket) => {
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
+  });
+});
 
-// Subscribe clients to events
-client1.subscribe('Player2', 'message');
-client2.subscribe('Player1', 'message');
-
-// Publish messages
-client1.publish('message', 'Hello, Player2!');
-client2.publish('message', 'Hi, Player1!');
+server.listen(3000, () => {
+  console.log('listening on *:3000');
+});

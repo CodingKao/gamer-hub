@@ -8,7 +8,8 @@ Gamer-Hub is a chat application designed to connect gamers and players, allowing
 
 ## Links and Resources
 
-- Code from previous lab, lab 13.
+- Use starter code from https://socket.io/get-started/chat
+- Reference Code from previous lab, lab 13.
 
 
 ## Setup
