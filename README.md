@@ -39,4 +39,4 @@ Gamer-Hub is a chat application designed to connect gamers and players, allowing
 
 ### UML
 
-![Gamer Hub UML]()
+![Gamer Hub UML](./assets/gamer-hub-uml.png);
