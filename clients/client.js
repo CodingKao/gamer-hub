@@ -1,4 +1,4 @@
-// Client module
+'use stirct';
 
 class Client {
   constructor(clientId) {
