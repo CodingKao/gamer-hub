@@ -1,4 +1,4 @@
-// Server module
+'use strict';
 
 class Server {
   constructor() {
